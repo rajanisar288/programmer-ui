@@ -1,0 +1,124 @@
+/* Font Family  */
+@font-face {
+    font-family: "web-font";
+    src: url(./../fonts/myFont.ttf);
+}
+
+/* CSS root variables. */
+body.darkTheme{
+ 
+    --primary: #2d2d30;
+    --text-color: #dadada;
+    --border:1px solid rgba(139, 139, 139, 0.082);
+    --boxShadow:rgb(0 0 0 / 33%) 0px 10px 36px 0px, rgb(113 87 255 / 39%) 0px 0px 0px 1px;
+    --font:web-font;
+    --cardColor:rgba(95, 88, 88, 0.301); 
+    --linearColor:linear-gradient(to right,  #2e2c2c , #464646);   
+}
+
+
+body{
+    --primary: #fff; 
+    --text-color: #858585;
+    --border:1px solid rgba(192, 43, 43, 0.082);
+    --boxShadow:rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    --font:web-font;  
+    --cardColor:rgba(238, 238, 238, 0.39); 
+    --linearColor:linear-gradient(to right,  #FFFFFF, #D7E1EC);
+
+}
+
+body{
+    background: var(--primary);
+    box-sizing: border-box;
+}
+*,body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+}
+
+/* CONTAINER */
+.container{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;   
+}
+/* HEADER */
+.header{
+    background: var(--cardColor);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 50px;
+}
+.header .logo{
+    display: flex;
+    padding-left: 2%;
+    height: 50px;
+    line-height: 50px;
+    width: 20%;
+    align-items: center;
+}
+.header .humburgerTggle{
+    display: none;
+    cursor: pointer;
+}
+.header .menu{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    height: 50px;
+    width: 40%;
+   
+}
+.header .menu .menuList{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+.header .menu .menuList a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+.header .menu .menuList .toggler img{
+    cursor: pointer;
+}
+
+
+/* BANNER */
+.banner{
+    background: var(--linearColor);
+    width: 100%;
+    height: 95vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .overlay{
+    width: 90%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.bannerImage{
+    width: 50%;
+}
+.banner .overlay .content {
+    width: 50%;
+    height: 50vh;
+    box-sizing: border-box;
+    border: var(--border);
+ 
+}
+
+
+

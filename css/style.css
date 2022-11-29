@@ -1,124 +1,414 @@
 /* Font Family  */
 @font-face {
-    font-family: "web-font";
-    src: url(./../fonts/myFont.ttf);
+  font-family: "web-font";
+  src: url(./../fonts/myFont.ttf);
 }
 
 /* CSS root variables. */
-body.darkTheme{
- 
-    --primary: #2d2d30;
-    --text-color: #dadada;
-    --border:1px solid rgba(139, 139, 139, 0.082);
-    --boxShadow:rgb(0 0 0 / 33%) 0px 10px 36px 0px, rgb(113 87 255 / 39%) 0px 0px 0px 1px;
-    --font:web-font;
-    --cardColor:rgba(95, 88, 88, 0.301); 
-    --linearColor:linear-gradient(to right,  #2e2c2c , #464646);   
+body.darkTheme {
+  --primary: #2d2d30;
+  --text-color: #dadada;
+  --border: 1px solid rgba(139, 139, 139, 0.082);
+  --boxShadow: rgb(0 0 0 / 33%) 0px 10px 36px 0px;
+  --font: web-font;
+  --cardColor: rgba(95, 88, 88, 0.301);
+  --headerColor: rgb(51, 51, 51);
+  --linearColor: linear-gradient(to right, #2e2c2c, #464646);
+  --colorHeader:rgb(104, 71, 252);
+  --navbarBackground:#363636;
+  --border:1px solid rgb(104 71 252 / 62%);
+  --darktextColor: rgb(216, 216, 216);
+}
+
+body {
+  --primary: #fff;
+  --text-color: #858585;
+  --border: 1px solid rgba(192, 43, 43, 0.082);
+  --boxShadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  --font: web-font;
+  --cardColor: rgb(238 238 238);
+  --headerColor: rgb(238 238 238);
+  --linearColor: linear-gradient(to right, #ffffff, #d7e1ec);
+  --colorHeader:rgb(104, 71, 252);
+  --navbarBackground:#fffbfb;
+  --border:1px solid  rgb(104 71 252 / 27%);
+  --darktextColor: rgba(80, 80, 80, 0.89);
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+body {
+  background: var(--primary);
+  box-sizing: border-box;
+}
+*,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+input,
+button:focus {
+  outline: none;
+  border: none;
+}
+a{
+    text-decoration: none;
+}
+.getMeTop{
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background: var(--colorHeader);
+  box-shadow: var(--boxShadow);
+  border: var(--border);
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  display: none;
 }
 
 
-body{
-    --primary: #fff; 
-    --text-color: #858585;
-    --border:1px solid rgba(192, 43, 43, 0.082);
-    --boxShadow:rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    --font:web-font;  
-    --cardColor:rgba(238, 238, 238, 0.39); 
-    --linearColor:linear-gradient(to right,  #FFFFFF, #D7E1EC);
-
-}
-
-body{
-    background: var(--primary);
-    box-sizing: border-box;
-}
-*,body{
-    margin: 0;
-    padding: 0;
-    font-family: var(--font);
-}
 
 /* CONTAINER */
-.container{
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;   
+.container {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+
 }
 /* HEADER */
-.header{
-    background: var(--cardColor);
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    height: 50px;
-}
-.header .logo{
-    display: flex;
-    padding-left: 2%;
-    height: 50px;
-    line-height: 50px;
-    width: 20%;
-    align-items: center;
-}
-.header .humburgerTggle{
-    display: none;
-    cursor: pointer;
-}
-.header .menu{
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-    align-items: center;
-    height: 50px;
-    width: 40%;
-   
-}
-.header .menu .menuList{
-    display: flex;
-    justify-content: space-around;
-    width: 70%;
-}
-.header .menu .menuList a{
-    text-decoration: none;
-    text-transform: uppercase;
-    color: var(--text-color);
-}
-.header .menu .menuList .toggler img{
-    cursor: pointer;
+.header {
+  background: var(--headerColor);
+  width: 94%;
+  display: flex;
+  margin-left: 3%;
+  margin-bottom: 50px;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 50px;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  border-radius: 5px;
+  position: fixed;
+  z-index: 888;
+  transition: 320ms;
+  border-bottom: 1px solid var(--colorHeader);
 }
 
+.headerScroll{
+  margin-top: 0px;
+  box-shadow: none;
+  border-radius: 0px;
+  width: 100%;
+  margin-left: 0%;
+  position: fixed;
+  z-index: 888;
+  transition: 320ms;
+  border-bottom: none;
+}
+.header .logo {
+  display: flex;
+  padding-left: 2%;
+  height: 50px;
+  line-height: 50px;
+  width: 20%;
+  align-items: center;
+}
+.header .humburgerTggle {
+  display: none;
+  cursor: pointer;
+}
+.header .menu {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  height: 50px;
+  width: 40%;
+}
+.header .menu .menuList {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+}
+.header .menu .menuList a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+.header .menu .menuList .toggler img {
+  cursor: pointer;
+}
 
 /* BANNER */
-.banner{
-    background: var(--linearColor);
-    width: 100%;
-    height: 95vh;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.banner {
+  background: var(--linearColor);
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.banner .overlay{
-    width: 90%;
-    height: 80vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    
+.banner .overlay {
+  width: 90%;
+  height: auto;
+  /* background: #000; */
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
 }
-.bannerImage{
-    width: 50%;
+.banner .overlay .bannerImage {
+  width: 50%;
 }
 .banner .overlay .content {
-    width: 50%;
-    height: 50vh;
-    box-sizing: border-box;
-    border: var(--border);
- 
+  width: 50%;
+  height: 50vh;
+  box-sizing: border-box;
+}
+
+.banner .overlay .content .c-pera{
+    width: 100%;
+    text-align: center;
+    height: 50px;
+   color: var(--text-color);
+   font-weight: lighter;
+}
+
+.banner .overlay .content .c-head{
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    color: var(--colorHeader);
+    letter-spacing: 5px;
+    font-weight: bolder;
+
+}
+
+ .next{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+
+}
+
+ .next img{
+    margin-top: 0px;
+    transition: 320ms;
+    animation: arrow 2s linear infinite;
+
+}
+@keyframes arrow{
+    0%{margin-top: 0px;transition: 320ms; opacity: 0.1;}
+    100%{margin-top: 50px;transition: 320ms;}
 }
 
 
 
+
+/* ABOUT */
+.about{
+    width: 100%;
+    height: auto;
+    background: var(--primary);
+    display: flex;
+    justify-content:space-evenly;
+    padding-top: 50px 0px 50px 0px !important;
+    position: relative;
+    flex-wrap: wrap;
+}
+.about .left{
+    width: 40%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
+    
+}
+.imager{
+    width: 100%;
+    height: 500px;
+    background: var(--cardColor);
+    display: flex;
+    justify-content: end;
+    border-radius: 5px;
+    box-shadow: var(--boxShadow);
+    position: relative;
+    border: var(--border);
+    
+}
+
+
+.imager img{
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    border-radius: 15px;
+    transition: 600ms;
+    border-right: 15px solid var(--colorHeader);
+    border-top: 15px solid var(--colorHeader);
+}
+.aboutImages{
+  right: 50px !important;
+  top: 20px !important;
+ transition: 920ms !important;
+}
+.imgText{
+  width: 100px;
+  height: 100px;
+  background: var(--colorHeader);
+  color: rgb(211, 211, 211);
+  text-align: center;
+  line-height: 100px;
+
+  position: absolute;
+  border-radius: 50%;
+  bottom: -50px;
+  right: -50px;
+}
+.about .right{
+     
+    width: 40%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
+    
+}
+.about .profileData{
+  /* background: var(--colorHeader); */
+  /* border: var(--border); */
+  box-shadow: var(--boxShadow);
+  border-radius: 5%;
+  position: absolute;
+  height: auto;
+  top: 20px;
+  left: 20px;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+  z-index: 9;
+  width: 40%;
+}
+.about .profileData a{
+  width: 100%;
+  padding-left: 15%;
+  height: 50px;
+  line-height: 50px;
+
+}
+.about .profileData a i{
+  color: var(--darktextColor);
+  font-size: 20px;
+}
+.about .profileData a:hover > span{
+  padding-left: 6%;
+  transition: 320ms;
+}
+.about .profileData a span{
+  color: var(--darktextColor);
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: 320ms;
+}
+.about .profileData p {
+  width: 100%;
+  height: 50px;
+  margin-top: 12px;
+ text-align: center;
+ color: var(--darktextColor);
+
+}
+
+.about .profileData p span{
+  font-weight: 700;
+}
+/* break point media queries 1022px */
+@media screen and (max-width: 1022px) {
+     .header{
+      width: 100%;
+      margin-left: 0%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      border: none;
+     }
+    .header .menu{
+        position: fixed !important;
+        height: 100vh;
+        z-index: 88;
+        width: 50%;
+        background:var(--navbarBackground);
+        left: -50%;
+        transition: 320ms;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    
+    } 
+    .header .humburgerTggle {
+        display: block;
+
+        
+      }
+
+       .header .menu .menuList{
+        flex-wrap: wrap;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+      .header .menu .menuList a{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 5%;
+        transition: 320ms;
+      }
+        .menuList a:hover{
+        padding-left: 17% !important;
+        transition: 320ms !important;
+      }
+      .toggler{
+        width: 100%;
+       bottom: 0;
+       padding-left: 5%;
+      }
+      .showNavbar{
+        left: 0% !important;
+        transition: 320ms !important;
+        display: block !important;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      .banner .overlay .bannerImage{
+        width: 90%;
+      }
+      .about .left ,  .about .right{
+        width: 70%;
+      }
+      .about .imager img {
+        top: -10px;
+        right: -10px;
+      }
+      .about .profileData{
+        width: 90%;
+        top: 200px;
+      }
+      .about .profileData a{
+        padding-left: 5%;
+      }
+
+}

@@ -4,42 +4,113 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
   </head>
-  <body class="">
+  <body >
     <!-- mainContainer -->
     <div class="container">
-        <!-- header -->
-      <div class="header">
-        <div class="logo"><img src="./images/logo.png" width="30" height="30" alt="logo"></div>
-        <div class="humburgerTggle">
-            button
+
+
+
+
+
+
+      <!-- header -->
+      <div class="header" id="home">
+        <div class="logo">
+          <img src="./images/logo.png" width="30" height="30" alt="logo" />
         </div>
+        <div class="humburgerTggle"><button id="menu"><img src="./images/menu.png" width="32" alt=""></button></div>
         <div class="menu">
           <div class="menuList">
-            <a href="">home</a>
-            <a href="">about</a>
+            <a href="#home">home</a>
+            <a href="#about">about</a>
             <a href="">service</a>
             <a href="">projects</a>
             <a href="">contact</a>
           </div>
-          <div class="toggler"><img src="./images/theme.png" width="30" height="30" alt="themeToggle"></div>
+          <div class="toggler">
+            <button id="toggleBtn">
+              <img
+                src="./images/theme.png"
+                width="30"
+                height="30"
+                alt="themeToggle"
+              />
+            </button>
+          </div>
         </div>
       </div>
       <!-- header end-->
 
-      <!-- banner -->
-       <div class="banner">
-        <div class="overlay">
-            <div class="content">ss</div>
-            <div class="bannerImage"><img src="./images/vactor.png" alt="vector" width="100%"></div>
-        </div>
-       </div>
-      <!-- banner end-->
-    </div>
 
+
+
+
+      <!-- banner -->
+      <div class="banner">
+        <div class="overlay">
+          <div class="content">
+            <h3 class="c-pera">Let's make the</h3>
+            <h1 class="c-head">Application</h1>
+            <h3 class="c-pera">With javascript</h3>
+            <h3 class="c-pera">
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since  
+            </h3>
+          </div>
+          <div class="bannerImage">
+            <img src="./images/vactor.png" alt="vector" width="100%" />
+          </div>
+          <div class="next"><a href="#about"><img src="./images/next.png" alt=""></a></div>
+        </div>
+      </div>
+      <!-- banner end-->
+
+
+      <div class="about" id="about">
+         <div class="left">
+          <div class="profileData">
+            <a href="#home"><i class="fab fa-facebook"></i><span> Facebook</span></a>
+            <a href="#home"><i class="fab fa-youtube"></i><span> Youtube</span></a>
+            <a href="#home"><i class="fab fa-snapchat"></i><span> Snapchat</span></a>
+            <a href="#home"><i class="fab fa-linkedin"></i><span> Linkedin</span></a>
+            <p>Profession : <span>Software Engineer</span> </p>
+          </div>
+          <div class="imager"> 
+            <img src="./images/profile1.jpg" width="50%" alt="" id="profile1">
+            <div class="imgText">
+               <h1>1st</h1>
+            </div>
+          </div>
+         </div>
+         <div class="right">
+          <div class="profileData">
+            <a href="#home"><i class="fab fa-facebook"></i><span> Facebook</span></a>
+            <a href="#home"><i class="fab fa-youtube"></i><span> Youtube</span></a>
+            <a href="#home"><i class="fab fa-snapchat"></i><span> Snapchat</span></a>
+            <a href="#home"><i class="fab fa-linkedin"></i><span> Linkedin</span></a>
+            <p>Profession : <span>Software Engineer</span> </p>
+          </div>
+          <div class="imager"> 
+            <img src="./images/profile1.jpg" width="50%" alt="" id="profile1">
+            <div class="imgText">
+              <h1>2nd</h1>
+            </div>
+          </div>
+         </div>
+         <div class="next"><a href="#about"><img src="./images/next.png" alt=""></a></div>
+      </div>
+    </div>
+    <div class="getMeTop">
+      <a href="#home">j</a>
+    </div>
 
     <!-- <i class="fab fa-facebook"></i> -->
     <!-- mainContainer end-->
